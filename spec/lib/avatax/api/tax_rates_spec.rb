@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Avatax::Api::TaxRates, :vcr do
   let(:client) do
     Avatax::Client.new(
-      username: ENV['AVATAX_USERNAME'],
-      password: ENV['AVATAX_PASSWORD'],
+      username: 'user_good',
+      password: 'pass_good',
       env: :sandbox
     )
   end
