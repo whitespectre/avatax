@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://sandbox-rest.avatax.com/api/v2/companies/DEFAULT/transactions/1/void
+    body:
+      encoding: UTF-8
+      string: '{"code":3}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<BASIC_AUTH>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Location:
+      - "/api/v2/companies/557317/transactions/287890204"
+      Server:
+      - Kestrel
+      Serverduration:
+      - '00:00:00.0402538'
+      Databasecalls:
+      - '4'
+      Databaseduration:
+      - '00:00:00.0156272'
+      Date:
+      - Sun, 09 Apr 2017 18:06:53 GMT
+    body:
+      encoding: UTF-8
+      string: '{"id":287890204,"code":"1","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Cancelled","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"1","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":9.9900,"totalExempt":0.0000,"totalTax":0.9000,"totalTaxable":9.9900,"totalTaxCalculated":0.9000,"adjustmentReason":"Other","adjustmentDescription":"Unvoiding","locked":false,"region":"WA","country":"US","version":4,"softwareVersion":"16.12.4.4","originAddressId":739207826,"destinationAddressId":739207827,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T18:06:53.597","modifiedUserId":275128,"taxDate":"2017-04-09T00:00:00","lines":[{"id":1048171220,"transactionId":287890204,"lineNumber":"a334abe5-","boundaryOverrideId":0,"customerUsageType":"","description":"","destinationAddressId":739207827,"originAddressId":739207826,"discountAmount":0.0000,"exemptAmount":0.0000,"exemptCertId":0,"exemptNo":"","isItemTaxable":true,"isSSTP":false,"itemCode":"","lineAmount":9.9900,"quantity":1.0000,"ref1":"","ref2":"","reportingDate":"2017-04-09","revAccount":"","sourcing":"Destination","tax":0.9000,"taxableAmount":9.9900,"taxCalculated":0.9000,"taxCode":"","taxCodeId":8087,"taxDate":"2017-04-09","taxEngine":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","taxIncluded":false,"details":[{"id":1901653918,"transactionLineId":1048171220,"transactionId":287890204,"addressId":739207827,"country":"US","region":"WA","stateFIPS":"53","exemptAmount":0.0000,"exemptReasonId":4,"inState":true,"jurisCode":"53","jurisName":"WASHINGTON","jurisdictionId":61,"stateAssignedNo":"","jurisType":"STA","nonTaxableAmount":0.0000,"nonTaxableRuleId":0,"nonTaxableType":"RateRule","rate":0.065000,"rateRuleId":1100068,"rateSourceId":3,"serCode":"","sourcing":"Destination","tax":0.6500,"taxableAmount":9.9900,"taxType":"Sales","taxName":"WA
+        STATE TAX","taxAuthorityTypeId":45,"taxRegionId":2109716,"taxCalculated":0.6500,"taxOverride":0.0000,"rateType":"General","rateTypeCode":"G","taxableUnits":9.9900,"nonTaxableUnits":0.0000,"exemptUnits":0.0000,"unitOfBasis":"PerCurrencyUnit"},{"id":1901653919,"transactionLineId":1048171220,"transactionId":287890204,"addressId":739207827,"country":"US","region":"WA","stateFIPS":"53","exemptAmount":0.0000,"exemptReasonId":4,"inState":true,"jurisCode":"035","jurisName":"KITSAP","jurisdictionId":2987,"stateAssignedNo":"1800","jurisType":"CTY","nonTaxableAmount":0.0000,"nonTaxableRuleId":0,"nonTaxableType":"RateRule","rate":0.000000,"rateRuleId":1100069,"rateSourceId":3,"serCode":"","sourcing":"Destination","tax":0.0000,"taxableAmount":9.9900,"taxType":"Sales","taxName":"WA
+        COUNTY TAX","taxAuthorityTypeId":45,"taxRegionId":2109716,"taxCalculated":0.0000,"taxOverride":0.0000,"rateType":"General","rateTypeCode":"G","taxableUnits":9.9900,"nonTaxableUnits":0.0000,"exemptUnits":0.0000,"unitOfBasis":"PerCurrencyUnit"},{"id":1901653920,"transactionLineId":1048171220,"transactionId":287890204,"addressId":739207827,"country":"US","region":"WA","stateFIPS":"53","exemptAmount":0.0000,"exemptReasonId":4,"inState":true,"jurisCode":"03736","jurisName":"BAINBRIDGE
+        ISLAND","jurisdictionId":167883,"stateAssignedNo":"1804","jurisType":"CIT","nonTaxableAmount":0.0000,"nonTaxableRuleId":0,"nonTaxableType":"RateRule","rate":0.025000,"rateRuleId":1356519,"rateSourceId":3,"serCode":"","sourcing":"Destination","tax":0.2500,"taxableAmount":9.9900,"taxType":"Sales","taxName":"WA
+        CITY TAX","taxAuthorityTypeId":45,"taxRegionId":2109716,"taxCalculated":0.2500,"taxOverride":0.0000,"rateType":"General","rateTypeCode":"G","taxableUnits":9.9900,"nonTaxableUnits":0.0000,"exemptUnits":0.0000,"unitOfBasis":"PerCurrencyUnit"}],"lineLocationTypes":[{"documentLineLocationTypeId":580025914,"documentLineId":1048171220,"documentAddressId":739207827,"locationTypeCode":"ShipTo"},{"documentLineLocationTypeId":580025913,"documentLineId":1048171220,"documentAddressId":739207826,"locationTypeCode":"ShipFrom"}],"parameters":{}}],"addresses":[{"id":739207826,"transactionId":287890204,"boundaryLevel":"Address","line1":"100
+        Ravine Ln NE","line2":"","line3":"","city":"Bainbridge Island","region":"WA","postalCode":"98110-2687","country":"US","taxRegionId":2109716,"latitude":"47.624894","longitude":"-122.514923"},{"id":739207827,"transactionId":287890204,"boundaryLevel":"Address","line1":"100
+        Ravine Ln NE","line2":"","line3":"","city":"Bainbridge Island","region":"WA","postalCode":"98110-2687","country":"US","taxRegionId":2109716,"latitude":"47.624894","longitude":"-122.514923"}],"locationTypes":[],"summary":[{"country":"US","region":"WA","jurisType":"State","jurisCode":"53","jurisName":"WASHINGTON","taxAuthorityType":45,"stateAssignedNo":"","taxType":"Sales","taxName":"WA
+        STATE TAX","rateType":"General","taxable":9.99,"rate":0.065000,"tax":0.65,"taxCalculated":0.65,"nonTaxable":0.00,"exemption":0.00},{"country":"US","region":"WA","jurisType":"County","jurisCode":"035","jurisName":"KITSAP","taxAuthorityType":45,"stateAssignedNo":"1800","taxType":"Sales","taxName":"WA
+        COUNTY TAX","rateType":"General","taxable":9.99,"rate":0.000000,"tax":0.00,"taxCalculated":0.00,"nonTaxable":0.00,"exemption":0.00},{"country":"US","region":"WA","jurisType":"City","jurisCode":"03736","jurisName":"BAINBRIDGE
+        ISLAND","taxAuthorityType":45,"stateAssignedNo":"1804","taxType":"Sales","taxName":"WA
+        CITY TAX","rateType":"General","taxable":9.99,"rate":0.025000,"tax":0.25,"taxCalculated":0.25,"nonTaxable":0.00,"exemption":0.00}],"parameters":{}}'
+    http_version: 
+  recorded_at: Sun, 09 Apr 2017 18:07:12 GMT
+recorded_with: VCR 3.0.3

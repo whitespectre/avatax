@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://sandbox-rest.avatax.com/api/v2/companies/DEFAULT/transactions/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Authorization:
+      - "<BASIC_AUTH>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Server:
+      - Kestrel
+      Serverduration:
+      - '00:00:00'
+      Databasecalls:
+      - '2'
+      Databaseduration:
+      - '00:00:00'
+      Date:
+      - Sun, 09 Apr 2017 17:19:16 GMT
+    body:
+      encoding: UTF-8
+      string: '{"@recordsetCount":4,"value":[{"id":287824439,"code":"1","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Adjusted","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"1","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":0.0000,"totalExempt":0.0000,"totalTax":0.0000,"totalTaxable":0.0000,"totalTaxCalculated":0.0000,"adjustmentReason":"NotAdjusted","adjustmentDescription":"","locked":false,"region":"WA","country":"US","version":1,"softwareVersion":"16.12.4.4","originAddressId":739104701,"destinationAddressId":739104702,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T16:11:18.787","modifiedUserId":275127,"taxDate":"2017-04-09T00:00:00","summary":[],"parameters":{}},{"id":287825001,"code":"2","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Adjusted","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"2","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":0.0000,"totalExempt":0.0000,"totalTax":0.0000,"totalTaxable":0.0000,"totalTaxCalculated":0.0000,"adjustmentReason":"NotAdjusted","adjustmentDescription":"","locked":false,"region":"WA","country":"US","version":1,"softwareVersion":"16.12.4.4","originAddressId":739105674,"destinationAddressId":739105674,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T16:12:07.427","modifiedUserId":275127,"taxDate":"2017-04-09T00:00:00","summary":[],"parameters":{}},{"id":287826158,"code":"1","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Posted","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"1","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":9.9900,"totalExempt":0.0000,"totalTax":0.9000,"totalTaxable":9.9900,"totalTaxCalculated":0.9000,"adjustmentReason":"PriceAdjusted","adjustmentDescription":"","locked":false,"region":"WA","country":"US","version":2,"softwareVersion":"16.12.4.4","originAddressId":739107534,"destinationAddressId":739107535,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T16:39:09.717","modifiedUserId":275128,"taxDate":"2017-04-09T00:00:00","history":[{"id":287824439,"code":"1","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Adjusted","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"1","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":0.0000,"totalExempt":0.0000,"totalTax":0.0000,"totalTaxable":0.0000,"totalTaxCalculated":0.0000,"adjustmentReason":"NotAdjusted","adjustmentDescription":"","locked":false,"region":"WA","country":"US","version":1,"softwareVersion":"16.12.4.4","originAddressId":739104701,"destinationAddressId":739104702,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T16:11:18.787","modifiedUserId":275127,"taxDate":"2017-04-09T00:00:00","summary":[],"parameters":{}}],"summary":[],"parameters":{}},{"id":287826944,"code":"2","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Saved","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"2","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":15.9800,"totalExempt":0.0000,"totalTax":1.4200,"totalTaxable":15.9800,"totalTaxCalculated":1.4200,"adjustmentReason":"PriceAdjusted","adjustmentDescription":"","locked":false,"region":"WA","country":"US","version":2,"softwareVersion":"16.12.4.4","originAddressId":739108793,"destinationAddressId":739108793,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T16:12:07.38","modifiedUserId":275127,"taxDate":"2017-04-09T00:00:00","history":[{"id":287825001,"code":"2","companyId":557317,"date":"2017-04-09","paymentDate":"1900-01-01","status":"Adjusted","type":"SalesInvoice","batchCode":"","currencyCode":"USD","customerUsageType":"","customerVendorCode":"2","exemptNo":"","reconciled":false,"purchaseOrderNo":"","salespersonCode":"","taxOverrideType":"None","taxOverrideAmount":0.0000,"taxOverrideReason":"","totalAmount":0.0000,"totalExempt":0.0000,"totalTax":0.0000,"totalTaxable":0.0000,"totalTaxCalculated":0.0000,"adjustmentReason":"NotAdjusted","adjustmentDescription":"","locked":false,"region":"WA","country":"US","version":1,"softwareVersion":"16.12.4.4","originAddressId":739105674,"destinationAddressId":739105674,"exchangeRateEffectiveDate":"1900-01-01","exchangeRate":1.0000,"isSellerImporterOfRecord":false,"description":"","email":"","modifiedDate":"2017-04-09T16:12:07.427","modifiedUserId":275127,"taxDate":"2017-04-09T00:00:00","summary":[],"parameters":{}}],"summary":[],"parameters":{}}]}'
+    http_version: 
+  recorded_at: Sun, 09 Apr 2017 17:19:35 GMT
+recorded_with: VCR 3.0.3
