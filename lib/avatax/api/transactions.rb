@@ -32,7 +32,8 @@ module Avatax
       end
 
       def commit(company_code, transaction_code, args = {})
-        post_for(:commit, company_code, transaction_code, args.reverse_merge(commit: true))
+        args.reverse_merge(commit: true)
+        post_for(:commit, company_code, transaction_code, args)
       end
 
       def settle(company_code, transaction_code, args = {})
@@ -44,7 +45,8 @@ module Avatax
       end
 
       def void(company_code, transaction_code, args = {})
-        post_for(:void, company_code, transaction_code, args.reverse_merge(code: 3))
+        args.reverse_merge!(code: Avatax::Code::DOC_VOIDED)
+        post_for(:void, company_code, transaction_code, args)
       end
 
       def create(args = {})
