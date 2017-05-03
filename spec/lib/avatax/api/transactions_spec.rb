@@ -19,13 +19,13 @@ describe Avatax::Api::Transactions, :vcr do
     its(:success?) { is_expected.to eql true }
   end
 
-  describe '#get_by_code' do
-    subject { client.transactions.get_by_code(company_code, transaction_code) }
+  describe '#find_by_code' do
+    subject { client.transactions.find_by_code(company_code, transaction_code) }
     its(:success?) { is_expected.to eql true }
   end
 
-  describe '#get_by_id' do
-    subject { client.transactions.get_by_id(transaction_id) }
+  describe '#find_by_id' do
+    subject { client.transactions.find_by_id(transaction_id) }
     its(:success?) { is_expected.to eql true }
   end
 
