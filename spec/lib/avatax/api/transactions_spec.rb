@@ -12,7 +12,7 @@ describe Avatax::Api::Transactions, :vcr do
   let(:company_code) { 'DEFAULT' }
   let(:transaction_code) { 1 }
   let(:transaction_id) { 287826158 }
-  let(:params) { Hash.new }
+  let(:params) { {} }
 
   describe '#all' do
     subject { client.transactions.all(company_code) }
