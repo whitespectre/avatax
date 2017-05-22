@@ -53,6 +53,88 @@ resp = client.tax_rates.get(:by_postal_code, params)
 resp.success? # => true
 ```
 
+### Transactions
+
+#### Get all transactions within a company.
+```ruby
+client.transactions.all('my_company')
+```
+
+#### Find a transaction by code
+```ruby
+client.transactions.find_by_code('my_company', 'transaction_code')
+```
+
+#### Find a transaction by avatax id.
+```ruby
+client.transactions.find_by_id('my_company', '123')
+```
+
+#### Adjust an existing transaction.
+```ruby
+params = {
+  adjustmentReason: 8,
+  adjustmentDescription: 'New line item.',
+  new_transaction: { ... }
+}
+
+client.transactions.adjust('my_company', 'my_code', params)
+```
+
+#### Change a transaction code
+```ruby
+params = { newCode: 'my_new_code' }
+client.transactions.change_code('my_company', 'my_code', params)
+```
+
+#### Commit a transaction
+By default, if not present, the post request will contain the body `{ commit: true }`
+
+```ruby
+client.transactions.commit('my_company', 'my_code')
+```
+
+#### Settle a transaction
+This call can perform multiple actions on a transaction. See [avatax docs](https://developer.avalara.com/avatax/api-reference/tax/v2/Transactions/#SettleTransaction) for more information.
+```ruby
+params = { ... }
+client.transactions.settle('my_company', 'my_code', params)
+```
+
+#### Void a transaction.
+```ruby
+client.transactions.void('my_company', 'my_code')
+```
+
+#### Create a transaction
+```ruby
+params = {
+  code: 'my_code',
+  type: 'SalesInvoice',
+  companyCode: 'my_company',
+  date: Date.current.to_s,
+  customerCode: 1,
+  discount: 0.00,
+  addresses: {
+    ShipTo: {
+      line1: '50 Main street',
+      city: 'Salt Lake City',
+      region: 'UT',
+      country: 'US',
+      postalCode: '84144'
+    }
+  },
+  lines: [
+    {
+      amount: 9.99,
+      quantity: 1
+    }
+  ]
+}
+
+client.transactions.create(params)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -67,4 +149,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/[USERN
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
