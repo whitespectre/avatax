@@ -4,14 +4,14 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'avatax/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "avatax"
+  spec.name          = "avatax-ruby"
   spec.version       = Avatax::VERSION
   spec.authors       = ["Taylor Scott"]
   spec.email         = ["tscott@deseretbook.com"]
 
   spec.summary       = %q{Ruby client for Avatax}
   spec.description   = %q{Ruby client for Avatax}
-  spec.homepage      = "https://github.com/skukx/avatax-ruby"
+  spec.homepage      = "https://github.com/skukx/avatax"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
