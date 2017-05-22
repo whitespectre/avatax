@@ -9,7 +9,7 @@ describe Avatax::Api::TaxRates, :vcr do
     )
   end
 
-  let(:params) { Hash.new }
+  let(:params) { {} }
   let(:method) { nil }
 
   describe '#get' do
