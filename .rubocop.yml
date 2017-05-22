@@ -5,6 +5,7 @@ AllCops:
     - 'bin/**/*'
     - 'avatax.gemspec'
     - 'example.rb'
+    - 'vendor/**/*'
 
 # Block length was set to 25, we currently don't have a rule for this
 BlockLength:
