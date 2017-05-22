@@ -28,9 +28,8 @@ module Avatax
       raise ArgumentError, 'password is required' if args[:password].blank?
       raise ArgumentError, 'env is required' if args[:env].blank?
 
-      unless [SANDBOX, PRODUCTION].include?(args[:env].to_sym)
-        raise ArgumentError, 'env must be of :sandbox or :production'
-      end
+      return if [SANDBOX, PRODUCTION].include?(args[:env].to_sym)
+      raise ArgumentError, 'env must be of :sandbox or :production'
     end
   end
 end

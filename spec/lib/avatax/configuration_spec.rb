@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Avatax::Configuration do
-  let (:username) { 'user_good' }
-  let (:password) { 'pass_good' }
-  let (:env) { :sandbox }
+  let(:username) { 'user_good' }
+  let(:password) { 'pass_good' }
+  let(:env) { :sandbox }
 
   subject do
     Avatax::Configuration.new(

@@ -21,7 +21,7 @@ require 'pry'
 #
 file_path = File.join(__dir__, 'env.yml')
 if File.exist?(file_path)
-  YAML::load_file(file_path).each do |key, value|
+  YAML.load_file(file_path).each do |key, value|
     ENV[key] ||= value
   end
 end
