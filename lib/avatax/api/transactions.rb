@@ -11,6 +11,7 @@ module Avatax
       #
       # @param company_code [String] The company_code in avatax.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def all(company_code, args = {})
         raise ArgumentError, 'company_code is required' if company_code.blank?
@@ -26,6 +27,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def find_by_code(company_code, transaction_code, args = {})
         raise ArgumentError, 'company_code is required' if company_code.blank?
@@ -42,6 +44,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The avatax transaction ID.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def find_by_id(transaction_id, args = {})
         raise ArgumentError, 'transaction_id is required' if transaction_id.blank?
@@ -57,6 +60,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def adjust(company_code, transaction_code, args = {})
         post_for(:adjust, company_code, transaction_code, args)
@@ -69,6 +73,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The current avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def change_code(company_code, transaction_code, args = {})
         post_for(:changecode, company_code, transaction_code, args)
@@ -81,6 +86,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The current avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def commit(company_code, transaction_code, args = {})
         args.reverse_merge(commit: true)
@@ -94,6 +100,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The current avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def settle(company_code, transaction_code, args = {})
         post_for(:settle, company_code, transaction_code, args)
@@ -106,6 +113,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The current avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def verify(company_code, transaction_code, args = {})
         post_for(:verify, company_code, transaction_code, args)
@@ -118,6 +126,7 @@ module Avatax
       # @param company_code [String] The company_code in avatax.
       # @param transaction_code [String] The current avatax transaction code.
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def void(company_code, transaction_code, args = {})
         args.reverse_merge!(code: Avatax::Code::DOC_VOIDED)
@@ -129,9 +138,22 @@ module Avatax
       # @see https://developer.avalara.com/avatax/api-reference/tax/v2/Transactions/#ApiV2TransactionsCreatePost
       #
       # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
       #
       def create(args = {})
         resp = connection.post '/api/v2/transactions/create', args
+        handle_response(resp)
+      end
+
+      ##
+      # Create or Adjust a transaction if transaction already exists.
+      # @see https://developer.avalara.com/avatax/api-reference/tax/v2/Transactions/#CreateOrAdjustTransaction
+      #
+      # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
+      #
+      def create_or_adjust(args = {})
+        resp = connection.post '/api/v2/transactions/createoradjust', args
         handle_response(resp)
       end
 
