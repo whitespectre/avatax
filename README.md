@@ -27,8 +27,8 @@ And then execute:
 ### Setting Up the client
 ```ruby
 client = Avatax::Client.new(
-    username: 'avatax_user'
-    password: 'avatax_password'
+    username: 'avatax_user',
+    password: 'avatax_password',
     env: :sandbox
 )
 ```
@@ -42,9 +42,9 @@ The `env` can be set to `:sandbox` or `:production`.
 #
 params = {
     line1: '350 State St.',
-    city: 'Salt Lake City'
-    region: 'CA'
-    postalCode: '84111'
+    city: 'Salt Lake City',
+    region: 'CA',
+    postalCode: '84111',
     country: 'US'
 }
 resp = client.tax_rates.get(:by_address, params)

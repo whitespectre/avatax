@@ -10,7 +10,8 @@ module Avatax
       protected
 
       def handle_response(response)
-        response
+        # Wrap in our own response class
+        Avatax::Response.new response
       end
     end
   end
