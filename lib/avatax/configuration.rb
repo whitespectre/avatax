@@ -1,6 +1,6 @@
 module Avatax
   class Configuration
-    attr_reader :sandbox, :base_url, :env, :username, :password
+    attr_reader :sandbox, :base_url, :env, :username, :password, :headers
 
     REST_URLS = {
       sandbox:    'https://sandbox-rest.avatax.com',
@@ -16,6 +16,8 @@ module Avatax
       @env = args[:env].to_sym
       @sandbox = @env == SANDBOX
       @base_url = REST_URLS[env]
+
+      @headers = args[:headers] || {}
 
       @username = args[:username]
       @password = args[:password]
