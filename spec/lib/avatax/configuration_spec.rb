@@ -16,6 +16,7 @@ describe Avatax::Configuration do
   it { is_expected.to respond_to :sandbox }
   it { is_expected.to respond_to :base_url }
   it { is_expected.to respond_to :env }
+  it { is_expected.to respond_to :headers }
 
   context 'when :username is missing' do
     let(:username) { nil }

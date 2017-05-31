@@ -59,6 +59,8 @@ module Avatax
           @configuration.password
         )
 
+        conn.headers = @configuration.headers
+
         conn.response :json
         conn.response :logger
 
