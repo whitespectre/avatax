@@ -114,6 +114,26 @@ describe Avatax::Api::Transactions, :vcr do
     its(:success?) { is_expected.to eql true }
   end
 
+  describe '#refund' do
+    subject do
+      client.transactions.refund(
+        company_code,
+        transaction_code,
+        params
+      )
+    end
+
+    let(:params) do
+      {
+        refundTransactionCode: "R016300264.1",
+        refundDate: "2017-06-26T00:00:00-07:00",
+        refundType: "Full"
+      }
+    end
+
+    its(:success?, :pending) { is_expected.to eql true }
+  end
+
   describe '#create' do
     subject do
       client.transactions.create(params)
