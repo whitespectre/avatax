@@ -134,6 +134,19 @@ module Avatax
       end
 
       ##
+      # Refund a transaction
+      # @see https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/RefundTransaction/
+      #
+      # @param company_code [String] The company_code in avatax.
+      # @param transaction_code [String] The current avatax transaction code.
+      # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
+      #
+      def refund(company_code, transaction_code, args = {})
+        post_for(:refund, company_code, transaction_code, args)
+      end
+
+      ##
       # Create a transaction
       # @see https://developer.avalara.com/avatax/api-reference/tax/v2/Transactions/#ApiV2TransactionsCreatePost
       #
