@@ -157,6 +157,20 @@ module Avatax
         handle_response(resp)
       end
 
+      ##
+      # Lock a transaction
+      # @see https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/LockTransaction
+      #
+      # @param company_code [String] The company_code in avatax.
+      # @param transaction_code [String] The avatax transaction code.
+      # @param args [Hash] Arguments for avatax.
+      # @return [Avatax::Response]
+      #
+      def lock(company_code, transaction_code, args = {})
+        args.reverse_merge!(isLocked: true)
+        post_for(:lock, company_code, transaction_code, args)
+      end
+
       private
 
       def post_for(endpoint, company_code, transaction_code, args)

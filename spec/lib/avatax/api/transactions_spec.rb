@@ -121,4 +121,16 @@ describe Avatax::Api::Transactions, :vcr do
 
     its(:success?, :pending) { is_expected.to eql true }
   end
+
+  describe '#lock' do
+    subject do
+      client.transactions.lock(
+        company_code,
+        transaction_code,
+        params
+      )
+    end
+
+    its(:success?, :pending) { is_expected.to eql true }
+  end
 end
