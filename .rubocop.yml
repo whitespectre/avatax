@@ -15,6 +15,9 @@ BlockLength:
 HttpPositionalArguments:
   Enabled: false
 
+Naming/BinaryOperatorParameterName:
+  Enabled: false
+
 # We are going to use .html_safe for the time being
 Rails/OutputSafety:
   Enabled: false
@@ -58,9 +61,6 @@ Performance/Count:
   Enabled: false
 
 Style/RaiseArgs:
-  Enabled: false
-
-Style/OpMethod:
   Enabled: false
 
 # We can use good judgement here
