@@ -89,7 +89,7 @@ module Avatax
       # @return [Avatax::Response]
       #
       def commit(company_code, transaction_code, args = {})
-        args.reverse_merge(commit: true)
+        args.reverse_merge!(commit: true)
         post_for(:commit, company_code, transaction_code, args)
       end
 
