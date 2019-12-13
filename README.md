@@ -9,13 +9,13 @@ See: http://developer.avalara.com/avatax/api-reference/tax/v2/
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'avatax-ruby', git: 'git@github.com:skukx/avatax.git', require: 'avatax'
+gem 'avatax-ruby', git: 'git@github.com:skukx/avatax.git'
 ```
 
 Or
 
 ```ruby
-gem 'avatax-ruby', require: 'avatax'
+gem 'avatax-ruby'
 ```
 
 And then execute:

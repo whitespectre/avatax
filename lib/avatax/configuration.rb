@@ -1,6 +1,7 @@
 module Avatax
   class Configuration
-    attr_reader :sandbox, :base_url, :env, :username, :password, :headers
+    attr_reader :sandbox, :base_url, :env, :username, :password, :headers,
+                :logger
 
     REST_URLS = {
       sandbox:    'https://sandbox-rest.avatax.com',
@@ -21,6 +22,8 @@ module Avatax
 
       @username = args[:username]
       @password = args[:password]
+
+      @logger = args[:logger] || Logger.new(STDOUT)
     end
 
     private

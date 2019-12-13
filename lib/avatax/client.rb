@@ -62,7 +62,7 @@ module Avatax
         conn.headers = @configuration.headers
 
         conn.response :json
-        conn.response :logger
+        conn.response :logger, @configuration.logger
 
         conn.adapter  Faraday.default_adapter
       end
