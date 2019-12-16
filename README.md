@@ -29,6 +29,7 @@ And then execute:
 client = Avatax::Client.new(
     username: 'avatax_user',
     password: 'avatax_password',
+    logger: Logger.new(STDOUT),
     env: :sandbox
 )
 ```
