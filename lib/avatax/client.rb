@@ -50,8 +50,23 @@ module Avatax
 
     def initialize(args = {})
       @configuration = Avatax::Configuration.new(args)
+      @connection = args[:connection] || build_default_connection
 
-      @connection = Faraday.new(url: @configuration.base_url) do |conn|
+      create_instances
+    end
+
+    private
+
+    def create_instances
+      namespaces = self.class.instance_variable_get(:@namespaces)
+      namespaces.each do |klass|
+        reader = klass.to_s.split('::').last.underscore
+        self.class.send(:define_method, reader.to_sym) { klass.new @connection }
+      end
+    end
+
+    def build_default_connection
+      Faraday.new(url: @configuration.base_url) do |conn|
         conn.request :json
         conn.request(
           :basic_auth,
@@ -65,18 +80,6 @@ module Avatax
         conn.response :logger, @configuration.logger
 
         conn.adapter  Faraday.default_adapter
-      end
-
-      create_instances
-    end
-
-    private
-
-    def create_instances
-      namespaces = self.class.instance_variable_get(:@namespaces)
-      namespaces.each do |klass|
-        reader = klass.to_s.split('::').last.underscore
-        self.class.send(:define_method, reader.to_sym) { klass.new @connection }
       end
     end
   end

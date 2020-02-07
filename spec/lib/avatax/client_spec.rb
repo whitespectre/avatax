@@ -29,4 +29,20 @@ describe Avatax::Client do
   it { is_expected.to respond_to :definitions }
   it { is_expected.to respond_to :tax_rates }
   it { is_expected.to respond_to :utilities }
+
+  context 'with custom connection' do
+    let(:connection) { double(:connection) }
+    let(:client) do
+      Avatax::Client.new(
+        username: 'user_good',
+        password: 'pass_good',
+        env: :sandbox,
+        connection: connection
+      )
+    end
+
+    it 'uses custom connection' do
+      expect(subject.subscriptions.connection).to eq(connection)
+    end
+  end
 end
