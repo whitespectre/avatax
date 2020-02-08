@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.3-jessie
+    steps:
+      - checkout
+      - run:
+          name: bundle install
+          command: bundle install
+      - run:
+          name: RSpec
+          command: bundle exec rspec
+          environment:
+            AVATAX_USERNAME: test
+            AVATAX_PASSWORD: test
+            AVATAX_ENV: sandbox
+
