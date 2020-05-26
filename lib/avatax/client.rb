@@ -36,6 +36,8 @@ module Avatax
 
     namespace :tax_codes
 
+    namespace :tax_content
+
     namespace :tax_rates
 
     namespace :tax_rules
@@ -76,7 +78,7 @@ module Avatax
 
         conn.headers = @configuration.headers
 
-        conn.response :json
+        conn.response :json, content_type: /\bjson$/
         conn.response :logger, @configuration.logger
 
         conn.adapter  Faraday.default_adapter
