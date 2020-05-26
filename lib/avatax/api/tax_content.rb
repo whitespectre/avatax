@@ -7,6 +7,7 @@ module Avatax
       # @param args [Hash] The query to send along
       # @options args [String] :region - The two character abbreviation for region
       # @param on_data [Proc] - A lambda to run when data is received (For Streaming)
+      #   See: https://lostisland.github.io/faraday/usage/streaming
       #
       def download_tax_rates_by_zipcode(date, args = {}, on_data = nil)
         response = connection.get do |request|
