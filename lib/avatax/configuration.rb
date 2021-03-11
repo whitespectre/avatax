@@ -29,7 +29,7 @@ module Avatax
     private
 
     def validate_args(args)
-      if a[:headers].try(:[], "Authorization").blank?
+      if args[:headers].try(:[], "Authorization").blank?
         raise ArgumentError, 'username is required' if args[:username].blank?
         raise ArgumentError, 'password is required' if args[:password].blank?
       end
