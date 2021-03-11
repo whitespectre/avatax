@@ -29,8 +29,10 @@ module Avatax
     private
 
     def validate_args(args)
-      raise ArgumentError, 'username is required' if args[:username].blank?
-      raise ArgumentError, 'password is required' if args[:password].blank?
+      if args[:headers].try(:[], :authorization).blank?
+        raise ArgumentError, 'username is required' if args[:username].blank?
+        raise ArgumentError, 'password is required' if args[:password].blank?
+      end
       raise ArgumentError, 'env is required' if args[:env].blank?
 
       return if [SANDBOX, PRODUCTION].include?(args[:env].to_sym)
